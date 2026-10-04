@@ -1,0 +1,1002 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ग्राम पंचायत नोसर | जनसेवा</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Noto Sans Devanagari","Mangal",Arial,sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    color:white;
+    background:
+    radial-gradient(circle at 15% 20%,rgba(255,210,50,.18),transparent 25%),
+    radial-gradient(circle at 85% 70%,rgba(255,180,0,.15),transparent 30%),
+    linear-gradient(135deg,#181300,#050505 55%,#211900);
+
+    overflow-x:hidden;
+}
+
+/* चमकदार पृष्ठभूमि */
+
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    background-image:
+    radial-gradient(rgba(255,215,60,.20) 1px,transparent 1px);
+    background-size:35px 35px;
+    pointer-events:none;
+    z-index:-1;
+}
+
+
+/* =========================
+        ऊपर का मेनू
+========================= */
+
+nav{
+    width:94%;
+    margin:18px auto;
+    padding:15px 22px;
+
+    border:1px solid rgba(255,215,60,.55);
+    border-radius:25px;
+
+    background:rgba(15,15,8,.55);
+    backdrop-filter:blur(20px);
+
+    box-shadow:
+    0 0 30px rgba(255,190,0,.20),
+    inset 0 0 25px rgba(255,210,0,.05);
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    position:sticky;
+    top:12px;
+    z-index:1000;
+}
+
+.logo{
+    color:#ffd83d;
+    font-size:21px;
+    font-weight:bold;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin:0 10px;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:#ffd83d;
+}
+
+
+/* =========================
+        मुख्य भाग
+========================= */
+
+.hero{
+    width:94%;
+    max-width:1200px;
+    margin:25px auto;
+
+    padding:45px;
+
+    border:1px solid rgba(255,215,60,.55);
+    border-radius:30px;
+
+    background:
+    linear-gradient(
+        90deg,
+        rgba(0,0,0,.90),
+        rgba(0,0,0,.35)
+    );
+
+    backdrop-filter:blur(18px);
+
+    box-shadow:
+    0 0 50px rgba(255,190,0,.18),
+    inset 0 0 70px rgba(255,190,0,.06);
+
+    display:flex;
+    align-items:center;
+    gap:50px;
+}
+
+
+/* सरपंच फोटो स्लॉट */
+
+.sarpanch-photo{
+    flex:0 0 300px;
+    height:360px;
+
+    padding:8px;
+
+    border-radius:30px;
+
+    border:2px solid #ffd83d;
+
+    background:rgba(255,215,60,.08);
+
+    box-shadow:
+    0 0 35px rgba(255,210,0,.45),
+    inset 0 0 25px rgba(255,210,0,.10);
+}
+
+.sarpanch-photo img{
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    border-radius:22px;
+}
+
+
+.hero-content{
+    max-width:650px;
+}
+
+.hero-content small{
+    color:#ffd83d;
+    font-size:19px;
+}
+
+.hero-content h1{
+    color:#ffd83d;
+    font-size:52px;
+    margin:15px 0;
+
+    text-shadow:
+    0 0 15px rgba(255,210,0,.55);
+}
+
+.hero-content h2{
+    font-size:30px;
+    margin-bottom:15px;
+}
+
+.hero-content p{
+    font-size:19px;
+    line-height:1.8;
+    color:#eeeeee;
+}
+
+
+/* =========================
+        कांच वाला भाग
+========================= */
+
+.glass{
+    width:94%;
+    max-width:1200px;
+
+    margin:35px auto;
+    padding:35px;
+
+    border:1px solid rgba(255,215,60,.50);
+    border-radius:30px;
+
+    background:rgba(20,18,8,.55);
+    backdrop-filter:blur(20px);
+
+    box-shadow:
+    0 0 45px rgba(255,190,0,.12),
+    inset 0 0 35px rgba(255,210,0,.04);
+}
+
+.title{
+    text-align:center;
+
+    color:#ffd83d;
+
+    font-size:34px;
+
+    margin-bottom:30px;
+
+    text-shadow:
+    0 0 15px rgba(255,210,0,.45);
+}
+
+
+/* =========================
+        सुविधाएं
+========================= */
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(6,1fr);
+    gap:15px;
+}
+
+.card{
+    min-height:155px;
+
+    padding:20px 10px;
+
+    text-align:center;
+
+    border:1px solid rgba(255,215,60,.45);
+    border-radius:20px;
+
+    background:rgba(255,255,255,.05);
+
+    backdrop-filter:blur(12px);
+
+    transition:.35s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+
+    border-color:#ffd21c;
+
+    box-shadow:
+    0 0 28px rgba(255,210,0,.30);
+}
+
+.icon{
+    font-size:42px;
+    margin-bottom:10px;
+}
+
+.card h3{
+    color:#ffd83d;
+    margin-bottom:8px;
+}
+
+.card p{
+    color:#ddd;
+    font-size:14px;
+}
+
+
+/* =========================
+        4 पोस्टर
+========================= */
+
+.poster-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+}
+
+.poster{
+    padding:8px;
+
+    border-radius:20px;
+
+    border:1px solid rgba(255,215,60,.55);
+
+    background:rgba(255,255,255,.05);
+
+    transition:.35s;
+}
+
+.poster:hover{
+    transform:
+    translateY(-10px)
+    scale(1.03);
+
+    box-shadow:
+    0 0 35px rgba(255,210,0,.40);
+}
+
+.poster img{
+    width:100%;
+    height:330px;
+
+    object-fit:cover;
+
+    display:block;
+
+    border-radius:14px;
+}
+
+
+/* =========================
+        सहमति भाग
+========================= */
+
+.vote{
+    text-align:center;
+
+    position:relative;
+
+    overflow:hidden;
+}
+
+.vote h2{
+    color:#ffd83d;
+    font-size:35px;
+    margin-bottom:30px;
+}
+
+.buttons{
+    display:flex;
+    justify-content:center;
+    gap:25px;
+}
+
+button{
+    border:none;
+
+    padding:18px 45px;
+
+    border-radius:50px;
+
+    font-size:20px;
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+.yes{
+    color:#171000;
+
+    background:
+    linear-gradient(
+        135deg,
+        #fff06a,
+        #ffbd00
+    );
+
+    box-shadow:
+    0 0 30px rgba(255,200,0,.40);
+}
+
+.yes:hover{
+    transform:scale(1.08);
+
+    box-shadow:
+    0 0 50px rgba(255,210,0,.75);
+}
+
+.no{
+    color:white;
+
+    background:rgba(255,255,255,.08);
+
+    border:1px solid rgba(255,255,255,.20);
+}
+
+.no:hover{
+    transform:scale(1.05);
+}
+
+#message{
+    margin-top:25px;
+
+    min-height:40px;
+
+    color:#ffd83d;
+
+    font-size:23px;
+    font-weight:bold;
+}
+
+
+/* =========================
+      फूल और चमक
+========================= */
+
+.effect{
+    position:fixed;
+
+    top:-70px;
+
+    pointer-events:none;
+
+    z-index:9999;
+
+    animation:fall linear forwards;
+}
+
+@keyframes fall{
+
+    0%{
+        transform:
+        translateY(-70px)
+        rotate(0deg)
+        scale(.5);
+
+        opacity:0;
+    }
+
+    10%{
+        opacity:1;
+    }
+
+    100%{
+        transform:
+        translateY(110vh)
+        translateX(var(--move))
+        rotate(720deg)
+        scale(1.5);
+
+        opacity:0;
+    }
+}
+
+
+/* =========================
+        इंस्टाग्राम
+========================= */
+
+.instagram{
+    text-align:center;
+}
+
+.insta{
+    display:inline-block;
+
+    padding:17px 35px;
+
+    border-radius:50px;
+
+    color:white;
+
+    text-decoration:none;
+
+    background:
+    linear-gradient(
+        135deg,
+        #ffd000,
+        #ff006a,
+        #8500ff
+    );
+
+    box-shadow:
+    0 0 30px rgba(255,0,120,.30);
+
+    font-size:19px;
+    font-weight:bold;
+
+    transition:.3s;
+}
+
+.insta:hover{
+    transform:scale(1.06);
+}
+
+
+/* =========================
+        नीचे
+========================= */
+
+footer{
+    margin-top:40px;
+
+    padding:30px;
+
+    text-align:center;
+
+    border-top:
+    1px solid rgba(255,215,60,.25);
+
+    color:#bbb;
+}
+
+
+/* =========================
+        मोबाइल
+========================= */
+
+@media(max-width:950px){
+
+    .cards{
+        grid-template-columns:repeat(3,1fr);
+    }
+
+    .poster-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .hero{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .sarpanch-photo{
+        width:280px;
+        flex-basis:auto;
+    }
+}
+
+
+@media(max-width:600px){
+
+    nav{
+        flex-direction:column;
+        gap:12px;
+    }
+
+    nav a{
+        font-size:13px;
+        margin:4px;
+    }
+
+    .hero{
+        padding:25px;
+    }
+
+    .hero-content h1{
+        font-size:36px;
+    }
+
+    .hero-content h2{
+        font-size:24px;
+    }
+
+    .cards{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .poster-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .poster img{
+        height:230px;
+    }
+
+    .buttons{
+        flex-direction:column;
+    }
+
+    button{
+        width:100%;
+    }
+
+    .glass{
+        padding:22px;
+    }
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =========================
+        मेनू
+========================= -->
+
+<nav>
+
+    <div class="logo">
+        🌿 ग्राम पंचायत नोसर
+    </div>
+
+    <div>
+
+        <a href="#home">मुख्य पृष्ठ</a>
+
+        <a href="#suvidha">
+            सुविधाएं
+        </a>
+
+        <a href="#posters">
+            पोस्टर
+        </a>
+
+        <a href="#sahmati">
+            सहमति
+        </a>
+
+    </div>
+
+</nav>
+
+
+<!-- =========================
+        सरपंच परिचय
+========================= -->
+
+<section class="hero" id="home">
+
+
+    <!--
+    सरपंच की फोटो यहाँ लगाएं
+
+    फोटो का नाम:
+    helo.jpg
+    -->
+
+    <div class="helo.jpg">
+
+        <img
+        src="helo.jpg"
+        alt="हड़मत सिंह महेचा">
+
+    </div>
+
+
+    <div class="hero-content">
+
+        <small>
+            🌿 ग्राम पंचायत नोसर
+        </small>
+
+        <h1>
+            हड़मत सिंह महेचा
+        </h1>
+
+        <h2>
+            सरपंच — ग्राम पंचायत नोसर
+        </h2>
+
+        <p>
+            ग्राम के विकास, जनसेवा और बेहतर भविष्य
+            के लिए समर्पित।
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+        सुविधाएं
+========================= -->
+
+<section class="glass" id="suvidha">
+
+    <h2 class="title">
+        🌿 प्रमुख सुविधाएं 🌿
+    </h2>
+
+
+    <div class="cards">
+
+
+        <div class="card">
+
+            <div class="icon">💧</div>
+
+            <h3>
+                पानी की व्यवस्था
+            </h3>
+
+            <p>
+                बेहतर पेयजल सुविधा
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="icon">🛣️</div>
+
+            <h3>
+                सड़क विकास
+            </h3>
+
+            <p>
+                सड़क एवं रास्तों का विकास
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="icon">💡</div>
+
+            <h3>
+                रोशनी व्यवस्था
+            </h3>
+
+            <p>
+                बेहतर प्रकाश व्यवस्था
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="icon">🧹</div>
+
+            <h3>
+                स्वच्छता
+            </h3>
+
+            <p>
+                स्वच्छ एवं सुंदर गांव
+            </p>
+
+        </div>
+
+
+       
+        <div class="card">
+
+            <div class="icon">🏠</div>
+
+            <h3>
+                गांव का विकास
+            </h3>
+
+            <p>
+                जनहित के विकास कार्य
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+        पोस्टर
+========================= -->
+
+<section class="glass" id="posters">
+
+    <h2 class="title">
+        📢पोस्टर
+    </h2>
+
+
+    <div class="poster-grid">
+
+
+        <div class="poster">
+            <img
+            src="h1.jpg"
+            alt="पोस्टर 1">
+        </div>
+
+
+        <div class="poster">
+            <img
+            src="h2.jpg"
+            alt="पोस्टर 2">
+        </div>
+
+
+        <div class="poster">
+            <img
+            src="h3.jpg"
+            alt="पोस्टर 3">
+        </div>
+
+
+        <div class="poster">
+            <img
+            src="h4.jpg"
+            alt="पोस्टर 4">
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+        सहमति
+========================= -->
+
+<section class="glass vote" id="sahmati">
+
+
+    <h2>
+        🌿 क्या आप सहमत हैं? 🌿
+    </h2>
+
+
+    <div class="buttons">
+
+
+        <button
+        class="yes"
+        onclick="sahmat()">
+
+            👍 हाँ, सहमत हूँ
+
+        </button>
+
+
+        <button
+        class="no"
+        onclick="nahi()">
+
+            ❌ नहीं
+
+        </button>
+
+
+    </div>
+
+
+    <div id="message"></div>
+
+
+</section>
+
+
+<!-- =========================
+        इंस्टाग्राम
+========================= -->
+
+<section class="glass instagram">
+
+    <h2 class="title">
+        📸 हमारे साथ जुड़ें
+    </h2>
+
+
+    <!--
+    YOUR_ID की जगह अपनी Instagram ID डालना
+    -->
+
+    <a
+    class="insta"
+    href="https://www.instagram.com/team_hadmatsinghnosar?utm_source=ig_web_button_share_sheet&stkn=ZDNlZDc0MzIxNw=="
+    target="_blank">
+
+        📸 Instagram पर जाएं →
+
+    </a>
+
+</section>
+
+
+<!-- =========================
+        नीचे
+========================= -->
+
+<footer>
+
+    🌿 सेवा • समर्पण • विकास 🌿
+
+    <br><br>
+
+    ग्राम पंचायत नोसर
+
+    <br><br>
+
+    © 2026 जनसेवा
+
+</footer>
+
+
+<script>
+
+
+/* =================================
+        हाँ वाला शानदार प्रभाव
+================================= */
+
+function sahmat(){
+
+
+    document.getElementById("message").innerHTML =
+    "🌸✨ धन्यवाद! आपका समर्थन हमारे लिए महत्वपूर्ण है। ✨🌸";
+
+
+    const effects = [
+
+        "🌸",
+        "🌼",
+        "🌺",
+        "🌻",
+        "🌷",
+        "💮",
+        "🌹",
+        "✨",
+        "⭐",
+        "💫",
+        "🌟",
+        "🍃",
+        "🌿",
+        "💛",
+        "🤍",
+        "🧡"
+
+    ];
+
+
+    /*
+       150 अलग-अलग
+       फूल और चमक
+    */
+
+    for(let i=0;i<150;i++){
+
+
+        let item =
+        document.createElement("div");
+
+
+        item.className =
+        "effect";
+
+
+        item.innerHTML =
+        effects[
+            Math.floor(
+                Math.random()*effects.length
+            )
+        ];
+
+
+        item.style.left =
+        Math.random()*100+"vw";
+
+
+        item.style.fontSize =
+        (18+Math.random()*35)+"px";
+
+
+        item.style.animationDuration =
+        (2+Math.random()*5)+"s";
+
+
+        item.style.animationDelay =
+        Math.random()*1.8+"s";
+
+
+        item.style.setProperty(
+            "--move",
+            (Math.random()*400-200)+"px"
+        );
+
+
+        document.body.appendChild(item);
+
+
+        setTimeout(()=>{
+
+            item.remove();
+
+        },7500);
+
+    }
+
+}
+
+
+/* =================================
+        नहीं वाला प्रभाव
+================================= */
+
+function nahi(){
+
+    document.getElementById("message").innerHTML =
+    "🙏 आपकी राय का सम्मान है।";
+
+}
+
+</script>
+
+
+</body>
+</html>
